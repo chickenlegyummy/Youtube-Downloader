@@ -27,6 +27,9 @@
 因為方法2不會使用我提供的exe檔，而是直接開啟script來運行，可以自己在pytube的repo中查看社群維護的bug fix。
 通常會發生bug的原因是pytube中cipher.py第27X行左右未趕上youtube的更新，pytube repo會有人po出solution，可以自己copy修改cipher.py
 
+### 2024-11-21
+我放棄update executable 建議自已compile source code run
+
 # References
 FFmpeg https://www.ffmpeg.org <br />
 pytube https://github.com/pytube/pytube
