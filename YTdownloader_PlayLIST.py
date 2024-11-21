@@ -2,7 +2,7 @@
 # 編寫平台: Windows 10 
 # 編寫人: chickenlegyummy 
 # 編寫日: 2024-02-15 3:58 AM GMT+8
-# Last edit: 2024-08-10 2:11 AM GMT+8 - 優化ffmpeg程序 
+# Latest edit: 2024-11-21 2:11 AM GMT+8 - fixed HTTP Error 403: Forbidden
 # 後記: 老子發現google到既youtube mp3 啲網太sus 所以寫左呢一個program
 # 注意: 每段片 or 音源都係最高品質 
 #           get_highest_resolution() ---- 識英文就解到 
@@ -13,6 +13,14 @@ import re
 from pytube import Playlist
 import subprocess
 import os
+from pytube.innertube import _default_clients
+
+_default_clients["ANDROID"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["IOS"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["ANDROID_EMBED"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["IOS_EMBED"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["IOS_MUSIC"]["context"]["client"]["clientVersion"] = "6.41"
+_default_clients["ANDROID_MUSIC"] = _default_clients["ANDROID"]
 
 def get_ffmpeg_path():
     while True:
